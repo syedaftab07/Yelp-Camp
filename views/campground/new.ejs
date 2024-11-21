@@ -1,0 +1,44 @@
+<%- layout('layouts/boilarplate') %>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+   
+    <form action="/campground" method="post" novalidate class="validated-form">
+
+        <div class="col-6 offset-3">
+     
+            
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="campground[title]" id="title" required>
+                <div class="valid-feedback">Looks good</div>
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="campground[location]" id="location" required>
+                <div class="valid-feedback">Looks good</div>
+            </div>
+
+         <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" class="form-control" name="campground[image]" id="image" required>
+            <div class="valid-feedback">Looks good</div>
+        </div>
+
+         <div class="mb-3">
+            <label for="price'" class="form-label">Price</label>
+            <input type="text" class="form-control" min="0" name="campground[price]" id="price" required>
+         </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label"> Description</label>
+            <textarea name="campground[description]" id="description" cols="30" rows="10" class="form-control" required></textarea>
+            <div class="valid-feedback">Looks good</div>  
+        </div>
+           
+        <button class="btn btn-success">Add campground</button>
+            <a href="/campground" class="btn btn-primary"> Back to campgrounds</a>
+        </div>
+    </form>
+    </div>

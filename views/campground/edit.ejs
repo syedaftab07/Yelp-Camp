@@ -1,0 +1,47 @@
+    
+    <%- layout('layouts/boilarplate') %>
+<div class="row">
+    <h1 class="text-center">Edit Campground</h1>
+   
+    <form action="/campground/<%=campground._id %>?_method=PUT" method="post" novalidate class="validated-form">
+
+        <div class="col-6 offset-3">
+     
+            
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="campground[title]" id="title"  value="<%=campground.title %>" required>
+                <div class="valid-feedback">looks good</div>
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="campground[location]" id="location" value="<%=campground.location %>" >
+                <div class="valid-feedback">looks good</div>
+            </div>
+
+         <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" class="form-control" name="campground[image]" id="image" value="<%=campground.image %>">
+            <div class="valid-feedback">looks good</div> 
+        </div>
+
+         <div class="mb-3">
+            <label for="price'" class="form-label">Price</label>
+            <input type="number" class="form-control" min="0" name="campground[price]" id="price" value="<%=campground.price %>">
+         </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label"> Description</label>
+            <textarea name="campground[description]" id="description" cols="30" rows="10" class="form-control"> <%=campground.description  %></textarea>
+            <div class="valid-feedback">looks good</div> 
+        </div>
+            
+        <button class="btn btn-success"> Save campground</button>
+            <a href="/campground" class="btn btn-primary"> Back to all campgrounds</a>
+        
+        </div>
+    </form>
+
+    </div>
